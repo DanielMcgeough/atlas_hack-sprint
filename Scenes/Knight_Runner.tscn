@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://bnnxpmcb02c33"]
+[gd_scene load_steps=3 format=3 uid="uid://bnnxpmcb02c33"]
+
+[ext_resource type="Script" path="res://Scripts/Knight_Runner.gd" id="1_4l88i"]
+[ext_resource type="PackedScene" uid="uid://bv7nnr2jpjgew" path="res://Scenes/knight.tscn" id="2_ubhkv"]
 
 [node name="Knight Runner" type="Node"]
+script = ExtResource("1_4l88i")
+
+[node name="Knight" parent="." instance=ExtResource("2_ubhkv")]
+position = Vector2(141, 413)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Ground" type="Area2D" parent="."]
