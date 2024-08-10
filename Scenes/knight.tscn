@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bv7nnr2jpjgew"]
+[gd_scene load_steps=14 format=3 uid="uid://bv7nnr2jpjgew"]
 
 [ext_resource type="Script" path="res://Scripts/knight.gd" id="1_0tyrk"]
 [ext_resource type="Texture2D" uid="uid://b1m7jct0iubdw" path="res://Assests/Sprite Animations/Run.png" id="2_7uo7y"]
@@ -68,18 +68,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjx6"]
-size = Vector2(23, 90)
+size = Vector2(12.5, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgy22"]
+size = Vector2(6, 42)
 
 [node name="Knight" type="CharacterBody2D"]
 script = ExtResource("1_0tyrk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(209, 189)
+position = Vector2(0, 1.78814e-07)
 scale = Vector2(2.457, 2.39453)
 sprite_frames = SubResource("SpriteFrames_80587")
 frame_progress = 0.510478
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(216, 219)
+position = Vector2(-3.25, 33.5)
 shape = SubResource("RectangleShape2D_yqjx6")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(12, 21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_tgy22")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
