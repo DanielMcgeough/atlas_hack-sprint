@@ -6,7 +6,6 @@ const JUMP_VELOCITY = -450.0
 var is_dying = false
 var change_is_dying = false
 signal is_dying_changed(new_value)
-signal char_dead_off_screen()
 var ascent_distance = 0
 var ascent_speed = 300
 var rotation_speed = 180
@@ -32,7 +31,6 @@ func _physics_process(delta):
 	position.x = 192
 
 	move_and_slide()
-		
 
 
 func _on_hitbox_body_shape_entered(_body_rid, body, _body_shape_index, _local_shape_index):
@@ -47,14 +45,7 @@ func _on_hitbox_body_shape_entered(_body_rid, body, _body_shape_index, _local_sh
 				ascent_distance += ascent_speed * delta
 		else:
 			velocity.y = descent_speed
-			if position.y > get_viewport_rect().size.y / 2:
-				# Handle character death completion, e.g., queue_free()
-				queue_free()
-				print("Char off scree")
-				emit_signal("char_dead_off_screen")
 
-func check_dying_condition():
-	return change_is_dying
 
 func _process(_delta):
 	change_is_dying = check_dying_condition()
@@ -63,5 +54,12 @@ func _process(_delta):
 		print("sending signal")
 		emit_signal("is_dying_changed", is_dying)
 		if is_dying:
-			$Body.set_deferred("disabled", true)
-			$"Hitbox/Hitbox Area".set_deferred("disabled", true)
+			turn_off_collision_layer()
+
+func check_dying_condition():
+	return change_is_dying
+
+func turn_off_collision_layer():
+	$Body.set_deferred("disabled", true)
+	$"Hitbox/Hitbox Area".set_deferred("disabled", true)
+
