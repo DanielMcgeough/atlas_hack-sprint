@@ -98,7 +98,8 @@ sources/0 = SubResource("TileSetAtlasSource_8fc7s")
 script = ExtResource("1_4l88i")
 
 [node name="Knight" parent="." instance=ExtResource("2_ubhkv")]
-position = Vector2(141, 413)
+z_index = 1
+position = Vector2(192, 447)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -110,3 +111,5 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_dq5p8")
 format = 2
 layer_0/tile_data = PackedInt32Array(720898, 65536, 1, 720899, 65536, 1, 720900, 65536, 1, 720901, 65536, 1, 720902, 65536, 1, 720903, 65536, 1, 720904, 65536, 1, 720905, 65536, 1, 720906, 65536, 1, 720907, 65536, 1, 720908, 65536, 1, 655374, 65536, 1, 655375, 65536, 1, 655376, 65536, 1, 655377, 65536, 1, 655378, 65536, 1, 655379, 65536, 1, 655380, 65536, 1, 589846, 65536, 1, 589847, 65536, 1, 589848, 65536, 1, 589849, 65536, 1, 589850, 65536, 1, 589851, 65536, 1, 589852, 65536, 1, 720909, 65536, 1, 655381, 65536, 1)
+
+[connection signal="is_dying_changed" from="Knight" to="." method="_on_knight_is_dying_changed"]

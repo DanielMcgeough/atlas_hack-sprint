@@ -83,14 +83,14 @@ scale = Vector2(2.457, 2.39453)
 sprite_frames = SubResource("SpriteFrames_80587")
 frame_progress = 0.510478
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Body" type="CollisionShape2D" parent="."]
 position = Vector2(-3.25, 33.5)
 shape = SubResource("RectangleShape2D_yqjx6")
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2(12, 21)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="Hitbox Area" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_tgy22")
 
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_shape_entered" from="Hitbox" to="." method="_on_hitbox_body_shape_entered"]
