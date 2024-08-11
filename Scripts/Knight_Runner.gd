@@ -18,4 +18,5 @@ func _process(_delta):
 		print("game over")
 
 func _on_knight_is_dying_changed(new_value):
+	is_dead = new_value
 	print("from game: ", new_value)
