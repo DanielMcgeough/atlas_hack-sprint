@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var _animated_sprite = $AnimatedSprite2D
+
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
@@ -17,7 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _ready():
-	pass
+	_animated_sprite.play("running")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -27,6 +29,9 @@ func _physics_process(delta):
 	# Handle jump -- we want to only jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		_animated_sprite.play("jump")
+	elif is_on_floor():
+		_animated_sprite.play("running")
 
 	position.x = 192
 
@@ -51,7 +56,6 @@ func _process(_delta):
 	change_is_dying = check_dying_condition()
 	if change_is_dying != is_dying:
 		is_dying = change_is_dying
-		print("sending signal")
 		emit_signal("is_dying_changed", is_dying)
 		if is_dying:
 			turn_off_collision_layer()
