@@ -59,6 +59,7 @@ func _process(_delta):
 		emit_signal("is_dying_changed", is_dying)
 		if is_dying:
 			turn_off_collision_layer()
+			_animated_sprite.play("No Animation")
 
 func check_dying_condition():
 	return change_is_dying
