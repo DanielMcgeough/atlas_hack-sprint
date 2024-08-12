@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Atlas Hack-sprint"
-run/main_scene="res://Scenes/knight.tscn"
+run/main_scene="res://Scenes/Knight_Runner.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Assests/icon.svg"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [rendering]
 
