@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnnxpmcb02c33"]
+[gd_scene load_steps=8 format=3 uid="uid://bnnxpmcb02c33"]
 
 [ext_resource type="Script" path="res://Scripts/Knight_Runner.gd" id="1_4l88i"]
 [ext_resource type="PackedScene" uid="uid://bv7nnr2jpjgew" path="res://Scenes/knight.tscn" id="2_ubhkv"]
@@ -95,6 +95,8 @@ texture = ExtResource("3_n2cej")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8fc7s")
 
+[sub_resource type="Theme" id="Theme_fsfb5"]
+
 [node name="Knight_Runner" type="Node2D"]
 script = ExtResource("1_4l88i")
 
@@ -114,10 +116,12 @@ format = 2
 layer_0/tile_data = PackedInt32Array(720898, 65536, 1, 720899, 65536, 1, 720900, 65536, 1, 720901, 65536, 1, 720902, 65536, 1, 720903, 65536, 1, 720904, 65536, 1, 720905, 65536, 1, 720906, 65536, 1, 720907, 65536, 1, 720908, 65536, 1, 655374, 65536, 1, 655375, 65536, 1, 655376, 65536, 1, 655377, 65536, 1, 655378, 65536, 1, 655379, 65536, 1, 655380, 65536, 1, 589846, 65536, 1, 589847, 65536, 1, 589848, 65536, 1, 589849, 65536, 1, 589850, 65536, 1, 589851, 65536, 1, 589852, 65536, 1, 720909, 65536, 1, 655381, 65536, 1)
 
 [node name="Score" type="Label" parent="."]
-offset_left = 958.0
-offset_top = 5.0
-offset_right = 1127.0
-offset_bottom = 121.0
+offset_left = 959.0
+offset_top = 54.0
+offset_right = 1128.0
+offset_bottom = 170.0
+theme = SubResource("Theme_fsfb5")
+theme_type_variation = &"HeaderLarge"
 script = ExtResource("4_c4tob")
 
 [connection signal="is_dying_changed" from="Knight" to="." method="_on_knight_is_dying_changed"]

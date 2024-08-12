@@ -5,6 +5,7 @@ var speed = 200
 var is_dead = false
 var gameover = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -12,6 +13,7 @@ func _ready():
 func _physics_process(delta):
 	for ground in $Ground.get_children():
 		ground.position.x -= speed*delta
+
 
 func _process(_delta):
 	var viewport_rect = get_viewport_rect()
