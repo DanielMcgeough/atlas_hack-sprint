@@ -1,9 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnnxpmcb02c33"]
+[gd_scene load_steps=9 format=3 uid="uid://bnnxpmcb02c33"]
 
 [ext_resource type="Script" path="res://Scripts/Knight_Runner.gd" id="1_4l88i"]
 [ext_resource type="PackedScene" uid="uid://bv7nnr2jpjgew" path="res://Scenes/knight.tscn" id="2_ubhkv"]
 [ext_resource type="Texture2D" uid="uid://dwskorf2u2wtx" path="res://Assests/Starter Tiles Platformer/FireSet.png" id="3_n2cej"]
 [ext_resource type="Script" path="res://Scenes/Score.gd" id="4_c4tob"]
+
+[sub_resource type="Animation" id="Animation_gnehb"]
+resource_name = "jump"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqra2"]
+_data = {
+"jump": SubResource("Animation_gnehb")
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fc7s"]
 texture = ExtResource("3_n2cej")
@@ -101,6 +109,11 @@ script = ExtResource("1_4l88i")
 [node name="Knight" parent="." instance=ExtResource("2_ubhkv")]
 z_index = 1
 position = Vector2(192, 447)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Knight"]
+libraries = {
+"": SubResource("AnimationLibrary_tqra2")
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
