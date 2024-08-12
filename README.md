@@ -1,7 +1,7 @@
-# Hack Sprint T2
+# Knight Runner
 
 ## NAME
-Hack Sprint t2
+Knight Runner
 
 ## TECHNOLOGIES UTILIZED
 Godot
@@ -19,4 +19,4 @@ The Game is going to be designed with ease of use in mind. There will be a main 
 to play the game or exit. One of our stretch goals is to include a high scores page.
 
 ## AUTHOS
-Dany McGeough, Logan Wyatt and Josh Merrick
+Danny McGeough, Logan Wyatt and Josh Merrick
