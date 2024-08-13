@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
         time -= delta
     else:
         time = time_out
-        score += 1
+        score += 100
         text = str(score)
