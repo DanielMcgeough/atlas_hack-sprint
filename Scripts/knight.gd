@@ -27,9 +27,11 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle jump -- we want to only jump
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_select") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		_animated_sprite.play("jump")
+	if (Input.is_action_pressed("ui_down")):
+		_animated_sprite.play("roll")
 	elif is_on_floor():
 		_animated_sprite.play("running")
 
