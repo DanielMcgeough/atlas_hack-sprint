@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnnxpmcb02c33"]
+[gd_scene load_steps=9 format=3 uid="uid://bnnxpmcb02c33"]
 
 [ext_resource type="Script" path="res://Scripts/Knight_Runner.gd" id="1_4l88i"]
+[ext_resource type="PackedScene" uid="uid://boc2egkk2ad5" path="res://Scenes/ParallaxBackground.tscn" id="2_1jjau"]
 [ext_resource type="PackedScene" uid="uid://bv7nnr2jpjgew" path="res://Scenes/knight.tscn" id="2_ubhkv"]
 [ext_resource type="Texture2D" uid="uid://dwskorf2u2wtx" path="res://Assests/Starter Tiles Platformer/FireSet.png" id="3_n2cej"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="4_mo6cx"]
@@ -99,6 +100,9 @@ sources/0 = SubResource("TileSetAtlasSource_8fc7s")
 
 [node name="Knight_Runner" type="Node2D"]
 script = ExtResource("1_4l88i")
+
+[node name="Node2D" parent="." instance=ExtResource("2_1jjau")]
+position = Vector2(398, 365)
 
 [node name="Knight" parent="." instance=ExtResource("2_ubhkv")]
 z_index = 1

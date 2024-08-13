@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://m6rirmjj6pmv"]
+[gd_scene load_steps=4 format=3 uid="uid://m6rirmjj6pmv"]
 
+[ext_resource type="Theme" uid="uid://b7hf52r78ee3l" path="res://Assests/Pixel_theme.tres" id="1_0jsft"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_x6mhq"]
+[ext_resource type="PackedScene" uid="uid://boc2egkk2ad5" path="res://Scenes/ParallaxBackground.tscn" id="3_dbqv5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,25 +11,52 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_0jsft")
 script = ExtResource("1_x6mhq")
+
+[node name="Node2D" parent="." instance=ExtResource("3_dbqv5")]
+position = Vector2(387, 268)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -89.0
+offset_right = 224.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 100
+text = "Knight Runner"
+fit_content = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -126.0
-offset_right = 136.0
-offset_bottom = -25.0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -15.5
+offset_right = 55.5
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
+action_mode = 0
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Quit"
 
 [node name="ContactButton" type="Button" parent="VBoxContainer"]
