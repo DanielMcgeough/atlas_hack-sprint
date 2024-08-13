@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bnnxpmcb02c33"]
+[gd_scene load_steps=20 format=3 uid="uid://bnnxpmcb02c33"]
 
 [ext_resource type="Script" path="res://Scripts/Knight_Runner.gd" id="1_4l88i"]
 [ext_resource type="PackedScene" uid="uid://boc2egkk2ad5" path="res://Scenes/ParallaxBackground.tscn" id="2_1jjau"]
@@ -424,6 +424,10 @@ sources/0 = SubResource("TileSetAtlasSource_nxxce")
 
 [sub_resource type="Theme" id="Theme_fsfb5"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_v2fyh"]
+font = ExtResource("8_62x4u")
+font_size = 75
+
 [node name="Knight_Runner" type="Node2D"]
 script = ExtResource("1_4l88i")
 
@@ -467,7 +471,7 @@ offset_right = 1076.0
 offset_bottom = 116.0
 theme = SubResource("Theme_fsfb5")
 theme_type_variation = &"HeaderLarge"
-theme_override_fonts/font = ExtResource("8_62x4u")
+label_settings = SubResource("LabelSettings_v2fyh")
 script = ExtResource("4_mo6cx")
 
 [connection signal="is_dying_changed" from="Knight" to="." method="_on_knight_is_dying_changed"]
