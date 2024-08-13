@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b7hf52r78ee3l"]
+
+[ext_resource type="FontFile" uid="uid://cd6xittrvk2wt" path="res://Assests/MinimalPixelFont.ttf" id="1_4ytrc"]
+
+[resource]
+default_font = ExtResource("1_4ytrc")
+Fonts/fonts/large = ExtResource("1_4ytrc")
+Fonts/fonts/normal = ExtResource("1_4ytrc")
