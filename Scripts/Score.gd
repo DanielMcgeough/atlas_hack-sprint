@@ -2,7 +2,7 @@ extends Label
 
 
 
-var time_out = 1
+var time_out = 0.1
 var time = time_out
 var score = 0
 
@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
         time -= delta
     else:
         time = time_out
-        score += 100
+        score += 1
         text = str(score)
