@@ -32,7 +32,7 @@ func _physics_process(delta):
 		_animated_sprite.play("jump")
 	elif (Input.is_action_pressed("ui_down")):
 		_animated_sprite.play("roll")
-	elif (Input.is_action_pressed("ui_right")):
+	if (Input.is_action_pressed("ui_right")):
 		_animated_sprite.play("Attack")
 	elif is_on_floor():
 		_animated_sprite.play("running")
