@@ -30,9 +30,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_select") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		_animated_sprite.play("jump")
-	if (Input.is_action_pressed("ui_down")):
+	elif (Input.is_action_pressed("ui_down")):
 		_animated_sprite.play("roll")
-	if (Input.is_action_pressed("ui_right")):
+	elif (Input.is_action_pressed("ui_right")):
 		_animated_sprite.play("Attack")
 	elif is_on_floor():
 		_animated_sprite.play("running")
