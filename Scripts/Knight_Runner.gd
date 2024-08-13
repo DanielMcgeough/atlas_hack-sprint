@@ -8,6 +8,7 @@ var gameover = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.gameover = false
 	randomize()
 
 func _physics_process(delta):
@@ -19,7 +20,8 @@ func _process(_delta):
 	var viewport_rect = get_viewport_rect()
 	if $Knight.position.y > viewport_rect.end.y and is_dead and !gameover:
 		Global.gameover = true
-		print("game over")
+		# TODO: add timer here to delay gameover screen
+		get_tree().change_scene_to_file("res://Scenes/game_over_screen.tscn")
 
 func _on_knight_is_dying_changed(new_value):
 	is_dead = new_value
