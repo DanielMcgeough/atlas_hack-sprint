@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1bheq7vi0y3x"]
+
+[ext_resource type="Texture2D" uid="uid://xusye20p15rj" path="res://Assests/Moving Spikes 32x32 scaled 64x64.png" id="1_pc1d7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k3uu"]
+atlas = ExtResource("1_pc1d7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1slv"]
+atlas = ExtResource("1_pc1d7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_putm1"]
+atlas = ExtResource("1_pc1d7")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aqsl"]
+atlas = ExtResource("1_pc1d7")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntq74"]
+atlas = ExtResource("1_pc1d7")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_432pl"]
+atlas = ExtResource("1_pc1d7")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etvhn"]
+atlas = ExtResource("1_pc1d7")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j734d"]
+atlas = ExtResource("1_pc1d7")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_af5dc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k3uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1slv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_putm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aqsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntq74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_432pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etvhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j734d")
+}],
+"loop": true,
+"name": &"Spike",
+"speed": 8.0
+}]
+
+[node name="Spikes" type="Node2D"]
+position = Vector2(192, 143)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_af5dc")
+animation = &"Spike"
+frame_progress = 0.396729
