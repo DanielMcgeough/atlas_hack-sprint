@@ -19,6 +19,10 @@ config/icon="res://Assests/icon.svg"
 
 Global="*res://Scripts/Global.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [github_to_itch]
 
 config/itch_username="moshjerrick"
