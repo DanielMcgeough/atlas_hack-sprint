@@ -5,15 +5,31 @@ var speed = 250
 var is_dead = false
 var gameover = false
 
+var levels = [
+	preload("res://Scenes/Levels/Castle.tscn"),
+	preload("res://Scenes/Levels/LavaStone.tscn"),
+	preload("res://Scenes/Levels/Swamp.tscn")
+]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.gameover = false
 	randomize()
+	spawn_level(0, 0)
+	spawn_level(3024, 0)
 
 func _physics_process(delta):
 	for ground in $Ground.get_children():
 		ground.position.x -= speed*delta
+		if ground.position.x < -3024:
+			spawn_level(ground.position.x+6048, 0)
+			ground.queue_free()
+
+func spawn_level(x, y):
+	var level = levels[randi() % len(levels)].instantiate()
+	level.position = Vector2(x, y)
+	$Ground.add_child(level)
 
 
 func _process(_delta):

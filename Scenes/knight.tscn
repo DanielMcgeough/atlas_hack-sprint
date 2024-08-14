@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://djmcx4ellnukd" path="res://Assests/Sprite Animations/Jump.png" id="2_vy8pd"]
 [ext_resource type="Texture2D" uid="uid://dyhiro8qoyja6" path="res://Assests/Sprite Animations/Pray.png" id="3_jhq4x"]
 [ext_resource type="Texture2D" uid="uid://477665lvpuia" path="res://Assests/Sprite Animations/Roll.png" id="5_b365s"]
-[ext_resource type="Texture2D" uid="uid://cubunjsgamtkx" path="res://Assests/Sprite Animations/Run.png" id="5_rnm7b"]
+[ext_resource type="Texture2D" uid="uid://b1m7jct0iubdw" path="res://Assests/Sprite Animations/Run.png" id="5_rnm7b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywsrs"]
 atlas = ExtResource("2_8v37q")
